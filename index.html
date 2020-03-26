@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <meta name="author" content="">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    p{
+      font-size: 128px;
+      display: inline;
+    }
+    #ok{
+      position: absolute;
+      left: 40%;
+      transition: opacity 1.5s, left 2s;
+    }
+    #stop{
+      opacity: 0%;
+      position: absolute;
+      left: 50%;
+      font-size: 128px;
+      z-index: 100;
+      transition: opacity 2s;
+    }
+    #point{
+      position: absolute;
+      left: 60%;
+      transition: opacity 1.5s, left 2s;
+    }
+ 
+    #container{
+      width:50%;
+      height:50%;
+    }
+    #stop:hover{
+      opacity: 100%;
+    }
+    #stop:hover ~ #ok{
+      left: 46%;
+      opacity:6.5%;
+    }
+    #stop:hover ~ #point{
+      left: 54%;
+      opacity:6.5%;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div id="container">
+        <p id="stop">✋</p>
+    <p id="ok">👌</p>
+    <p id="point">👈</p>
+  </div>
+
+</body>
+
+</html>
