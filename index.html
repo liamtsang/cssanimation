@@ -12,10 +12,21 @@
       font-size: 128px;
       display: inline;
     }
+    h4{
+      position: absolute;
+      left: 50%;
+      top: 5vmin;
+      font-family: sans-serif;
+      opacity: 0;
+      color:red;
+      transition: opacity 2.25s ease-in;
+    }
     #ok{
       position: absolute;
       left: 40%;
       transition: opacity 1.5s, left 2s;
+      transform-origin:  translatex(0px);
+      animation: idler 4s ease-in-out infinite;
     }
     #stop{
       opacity: 0%;
@@ -23,12 +34,14 @@
       left: 50%;
       font-size: 128px;
       z-index: 100;
-      transition: opacity 2s;
+      transition: opacity 2.25s ease-in;
     }
     #point{
       position: absolute;
       left: 60%;
       transition: opacity 1.5s, left 2s;
+      transform-origin:  translatex(0px);
+      animation: idlel 4s ease-in-out infinite;
     }
  
     #container{
@@ -40,22 +53,52 @@
     }
     #stop:hover ~ #ok{
       left: 46%;
-      opacity:6.5%;
+      opacity:3.5%;
     }
     #stop:hover ~ #point{
       left: 54%;
-      opacity:6.5%;
+      opacity:3.5%;
     }
+    #stop:hover ~ h4{
+      opacity: 100;
+    }
+    
+    @keyframes idler {
+        0% {
+            transform: translatex(0px);
+        }
+        50% {
+            transform: translatex(-60px);
+        }
+        100% {
+            transform: translatex(0px);
+        }
+    }
+    @keyframes idlel {
+        0% {
+            transform: translatex(0px);
+        }
+        50% {
+            transform: translatex(60px);
+        }
+        100% {
+            transform: translatex(0px);
+        }
+    }
+
+
   </style>
 </head>
 
 <body>
 
   <div id="container">
-        <p id="stop">✋</p>
+    <p id="stop">✋</p>
     <p id="ok">👌</p>
     <p id="point">👈</p>
+    <h4>Halt! Horny police!</h4>
   </div>
+  
 
 </body>
 
